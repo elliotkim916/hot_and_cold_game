@@ -5,7 +5,7 @@ import GuessSection from './guess-section';
 import StatusSection from './status-section';
 import InfoSection from './info-section';
 
-export default class Game extends React.component {
+export default class Game extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
