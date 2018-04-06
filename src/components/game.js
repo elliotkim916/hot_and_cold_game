@@ -11,7 +11,6 @@ export default class Game extends React.component {
         this.state = {
             guesses: [],
             feedback: 'Make your guess!',
-            auralStatus: '',
             correctAnswer: Math.round(Math.random() * 100) + 1
         };
     }
@@ -20,7 +19,6 @@ export default class Game extends React.component {
         this.setState({
             guesses: [],
             feedback: 'Make your guess!',
-            auralStatus: '', 
             correctAnswer: Math.round(Math.random() * 100) + 1
         });
     }
@@ -61,7 +59,9 @@ export default class Game extends React.component {
 
         return (
             <div>
-                <Header />
+                <Header 
+                    onRestartGame={() => this.restartGame()}
+                />
                 <main role="main">
                     <GuessSection 
                         feedback={feedback}
