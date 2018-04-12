@@ -1,8 +1,9 @@
 import React from 'react';
+import './info-section.css';
 
 export default function InfoSection(props) {
     return (
-        <section>
+        <section id="what" tabIndex="-1">
             <h2>What do I do?</h2>
             <p>This is a Hot or Cold Number Guessing Game.  The game goes like this:</p>
             <ol>
@@ -11,7 +12,6 @@ export default function InfoSection(props) {
                 <li>You will <strong>get feedback</strong> on how close ("hot") or far ("cold") your guess is.</li>
             </ol>
             <p>So, Are you ready?</p>
-            <button>Got it!</button>
         </section>
-    )
+    );
 }
