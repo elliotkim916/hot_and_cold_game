@@ -1,7 +1,8 @@
 import React from 'react';
+import './feedback.css';
 
 export default function Feedback(props) {
-    const key = props.guessCount;
+    const key = props.guessCounter;
 
     let guessAgain;
     if (key !== 0) {
@@ -9,13 +10,13 @@ export default function Feedback(props) {
     }
     return (
         <h2
-            key={key}
+            numberOfGuesses={key}
             id="feedback"
             role="status"
             aria-live="assertive"
             aria-atomic="true"
         >
-            {props.feedback} {guessAgain}
+            {props.assessment} {guessAgain}
         </h2>
     );
 }
