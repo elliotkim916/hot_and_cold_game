@@ -6,7 +6,11 @@ import StatusSection from './status-section';
 import InfoSection from './info-section';
 
 export default class Game extends React.Component {
+// constructor is used to set any initial properties of an obj created from the class
+// classes can inherit from other classes to make more specific versions of that class by
+// using the extends keyword
     constructor(props) {
+// super calls the constructor of the parent class
         super(props);
         this.state = {
             guesses: [],
@@ -46,15 +50,15 @@ export default class Game extends React.Component {
         }
 
         this.setState({
-            feedback,
-            guesses: [...this.state.guesses, guess]
+            guesses: [...this.state.guesses, guess],
+            feedback
         });
-
-        document.title = feedback ? `${feedback} | Hot or Cold` : 'Hot or Cold';
     }
 
     render() {
         const {feedback, guesses} = this.state;
+        // const feedback = this.state.feedback;
+        // const guesses = this.state.guesses;
         const guessCount = guesses.length;
 
         return (
@@ -64,12 +68,13 @@ export default class Game extends React.Component {
                 />
                 <main role="main">
                     <GuessSection 
-                        feedback={feedback}
-                        guessCount={guessCount}
-                        onMakeGuess={guess => this.makeGuess(guess)}
+                        evaluation={feedback}
+                        totalGuesses={guessCount}
+                        // onMakeGuess is a prop with a value that is a function
+                        onMakeGuess = {guess => this.makeGuess(guess)}
                     />
                     <StatusSection 
-                        guesses={guesses}
+                        myGuesses={guesses}
                     />
                     <InfoSection />
                 </main>
